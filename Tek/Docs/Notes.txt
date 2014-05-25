@@ -1,0 +1,33 @@
+FoxFour wrote:
+A crash course on weapon damage statistics using ICE:
+
+1. Fire up ICE, then locate and load the core file you want to look at. Core files have extension ".igc" and are located in your Allegiance "artwork" directory.
+2. Expand the "Parts" node, and find the weapon you are interested in.
+3. Note the following items: "shot interval", "energy consumption", "bullets per shot", and "projectile".
+4. Divide 1 by the "shot interval" to get rate of fire in shots per second.
+5. Multiply rate of fire by "energy consumption" and/or "bullets per shot" to get the total rate of energy and/or ammo consumption in units per second.
+6. Expand the "Projectiles" node and find the number you noted down from the weapon description.
+7. Note the following items: "regular damage per shot", "area damage per shot", "area damage radius", "speed", "lifespan", and "DM".
+8. Base damage rate for shots landing directly on target is calculated by multiplying rate of fire by the sum of "regular damage per shot" and "area damage per shot".
+9. "Splash" damage rate (for shots passing within "area damage radius" of the target by not impacting directly) is calculated as rate of fire multiplied by "area damage per shot".
+10. "Speed" multiplied by "lifespan" gives you the base range of the weapon (before faction modifiers and/or range upgrades).
+	Now comes the important part -- modifying the base damage rate for faction differences, damage upgrades, kill bonus, and target type.
+11. Expand the "Factions" node and select the shooter's faction. Multiply the base damage rate by the "PWDamage" value (even for EW weapons!).
+12. Decide whether or not you are assuming that the shooter's team has an exp built and has researched PW/EW Damage 1 and/or 2. If you assume PW/EW Damage 1, then multiply the current base damage rate by 1.10. If PW/EW Damage 2, then multiply by 1.1 again. (This is slightly simplified -- technically you should look up the values for the Damage GA's under developments, but don't worry about that right now since it's +10%/+10% in both DN and A+.)
+13. Decide what kill bonus your shooter has. Multiply the current base damage rate by (1 + (KB/100)). So if the shooter has a KB of 36, you would multiply by 1.36.
+
+The next bit gets complicated:
+14. Find your target ship in ICE. Click on the "loadout" tab, and then select "Shield" in the top left combo box (dropdown box). Note what shield type is listed there. Then go back to the "properties" tab and note the listed "armor class".
+15. Decide what level of shield the target has, and find the correct type and level in the "Parts" list. Note the "recharge rate" and "armor class" values.
+16. Find the target's faction in the "Factions" list, and multiply "recharge" by the "ShipShield" value listed for the faction.
+17. Decide whether the target team has a tac and has researched Ship Shields 1 and/or 2. If you assume Ship Shields 1, then multiply the new recharge rate by 1.1. Assuming Ship Shields 2, multiply by 1.1 again. (Also simplified, just like PW/EW Damage.)
+18. Click on "Globals" at the top of the left-hand list in ICE. For each weapon being fired, select the noted "DM" value in the "Damage Modifier" combo box. Repeat the next two steps each time:
+19. Multiply the current base damage rate by the value specified for the target ship's shield "armor class".
+20. Multiply the current base damage rate by the value specified for the target ship's hull "armor class" (this is the AC you noted right in the ship description).
+21. Now, add up the final damage rates for all weapons against the target's shield. Subtract the final recharge rate from this sum to get the total computed damage rate against the target's shields in shield units per second.
+22. Add up the final damage rates for all weapons against the target's hull. This sum is the total computed damage rate against the target's hull.
+
+From there you can calculate total time to kill just by referring to ship hull and shield strength values as necessary. 
+================
+
+RatingAdd and Rating divide are used in the calculation of combat rating change. RatingAdd is added to the killer's combat rating, RatingDivide is what the killed's combat rating is divided into.

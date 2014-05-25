@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tek", "Tek\Tek.csproj", "{2324A5B1-01BC-4725-8BD8-3657542C2496}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGCCore", "IGCCore\IGCCore.csproj", "{C139B5AE-4170-4EC8-BDD6-289B275C7104}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{2324A5B1-01BC-4725-8BD8-3657542C2496}.Debug.ActiveCfg = Debug|.NET
+		{2324A5B1-01BC-4725-8BD8-3657542C2496}.Debug.Build.0 = Debug|.NET
+		{2324A5B1-01BC-4725-8BD8-3657542C2496}.Release.ActiveCfg = Release|.NET
+		{2324A5B1-01BC-4725-8BD8-3657542C2496}.Release.Build.0 = Release|.NET
+		{C139B5AE-4170-4EC8-BDD6-289B275C7104}.Debug.ActiveCfg = Debug|.NET
+		{C139B5AE-4170-4EC8-BDD6-289B275C7104}.Debug.Build.0 = Debug|.NET
+		{C139B5AE-4170-4EC8-BDD6-289B275C7104}.Release.ActiveCfg = Release|.NET
+		{C139B5AE-4170-4EC8-BDD6-289B275C7104}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

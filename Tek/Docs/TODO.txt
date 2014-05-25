@@ -1,0 +1,11 @@
+TEK TODO
+========
+Fix crash when folder not exist on autoload core
+Fix cost calculation bug with upgrading stations
+Fix crashbug while compare-to'ing adv exp
+Fix alignment bug on details forms
+Fix vlymoxyd's core station thing
+
+A new form to show Faction-specific values to compare factions (Ksero)
+Add Keyboard Shortcuts (requirement for 2.0)
+
